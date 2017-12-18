@@ -37,17 +37,8 @@ p {
 .left {
 	float: left;
 }
-a {
-	font-weight: bold;
-	text-decoration: none;
-	color: #c00;
-
-	@include attention() {
-		outline: none;
-		color: #09f;
-	}
-}
 /*ap dung attention cho ca button*/
+
 .btn {
 	background-color: #09f;
 
