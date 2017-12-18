@@ -15,35 +15,49 @@
 		<% } %>
 	</head>
 	<body>
-		<nav>
-			<div class="nav-mobile">
-				<a href="#" id="nav-toggle"><span></span></a>
+		<section class="navigation">
+			<div class="nav-container">
+				<div class="brand">
+					<a href="#!">Logo</a>
+				</div>
+				<nav>
+					<div class="nav-mobile">
+						<a href="#" id="nav-toggle"><span></span></a>
+					</div>
+					<ul class="nav-list">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Services</a>
+							<ul class="nav-dropdown">
+								<li><a href="#">Web Design</a></li>
+								<li><a href="#">Web Development</a></li>
+								<li><a href="#">Graphic Design</a></li>
+							</ul>  
+						</li>
+						<li><a href="#">Pricing</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</nav>
 			</div>
-			<ul class="nav-list">
-				<li><a href="#">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Services</a>
-					<ul class="nav-dropdown">
-						<li><a href="#">Web Design</a></li>
-						<li><a href="#">Web Development</a></li>
-						<li><a href="#">Graphic Design</a></li>
-					</ul>  
-				</li>
-				<li><a href="#">Pricing</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul>
-		</nav>
+		</section>
 		<% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
 		<script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
 		<% } %>
 		<script>
-		$(function() { // DOM Ready
-			$('nav ul li > a:not(:only-child)').click(function(e) {
-				$(this).siblings('.nav-dropdown').toggle();
-			});
-			console.log("Jquery ready");
-
-		});
+$(function() { // DOM Ready
+	$('nav ul li > a:not(:only-child)').click(function(e) {
+		$(this).siblings('.nav-dropdown').toggle();
+		$('.nav-dropdown').not($(this).siblings()).hide();
+		e.stopPropagation();
+	});
+	$('html').click(function() {
+		$('.nav-dropdown').hide();
+	});
+	$('#nav-toggle').on('click', function() {
+		this.classList.toggle('active');
+		$('nav ul').toggle();
+	});
+});
 		</script>
 	</body>
 </html>
