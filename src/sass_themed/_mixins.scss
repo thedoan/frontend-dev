@@ -1,0 +1,21 @@
+@mixin bobs-burgers {
+  @if $brand == 'bobs-burgers' {
+    @content;
+  }
+}
+@mixin paddys-pub {
+  @if $brand == 'paddys-pub' {
+    @content;
+  }
+}
+@mixin stus-stews {
+  @if $brand == 'stus-stews' {
+    @content;
+  }
+}
+@mixin jurassic-fork {
+  @if $brand == 'jurassic-fork' {
+    @content;
+  }
+}
+

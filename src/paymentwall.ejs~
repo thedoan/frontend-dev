@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>PaymentWall Template</title>
+	</head>
+	<body>
+		<nav>
+			<div class="nav-mobile">
+				<a href="#" id="nav-toggle"><span></span></a>
+			</div>
+			<ul class="nav-list">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Services</a>
+					<ul class="nav-dropdown">
+						<li><a href="#">Web Design</a></li>
+						<li><a href="#">Web Development</a></li>
+						<li><a href="#">Graphic Design</a></li>
+					</ul>  
+				</li>
+				<li><a href="#">Pricing</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+		<script>
+			(function($) { // Begin jQuery
+				$(function() { // DOM Ready
+
+						alert("Ready!");
+					  // Insert all scripts here
+
+					});
+			})(jQuery);
+		</script>
+	</body>
+</html>

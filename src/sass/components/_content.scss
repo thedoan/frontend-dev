@@ -1,0 +1,20 @@
+.content {
+	float: left;
+	width: 70%;
+	@include responsive(wide-screens) {
+		width: 80%;
+	}
+	@include responsive(medium-screens) {
+		width: 50%;
+		font-size: 14px;
+	}
+	@include responsive(small-screens) {
+		float: none;
+		width: 100%;
+		font-size: 12px;
+	}
+}
+.content__article {
+}
+.content__article--featured {
+}

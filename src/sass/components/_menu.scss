@@ -1,0 +1,92 @@
+.menu {
+	background: #0B2027;
+	&__trigger {
+		background: #16414f;
+		float: left;
+		padding: 1.3rem 0;
+		//width: 10%;
+		text-align: center;
+		text-decoration: none;
+		color: white;
+		font-size: 1.5rem;
+		-webkit-transition: .3s;
+		transition: .3s;
+		&--active {
+			background: salmon;
+		}
+	}
+	&__row {
+		//width: 90%;
+		font-size: 0;
+	}
+	&__list {
+		display: inline-block;
+		vertical-align: bottom;
+		font-size: 1.2rem;
+	}
+	&__link {
+		display: block;
+		text-decoration: none;
+		padding: 1.5rem;
+		color: white;
+		font-weight: 500;
+		-webkit-transition: .3s;
+		transition: .3s;
+		&:hover {
+			background: #16414f;
+		}
+	}
+	&__dropdown {
+		padding: 1.6rem 0;
+		background: salmon;
+		display: none;
+	}
+	&__col {
+		width: 33.333%;
+		float: left;
+		padding: 2.5rem 1.5rem;
+	}
+}
+
+@media (min-width: 30em) and (max-width: 40em) {
+	.menu__trigger {
+		width: 15%;
+	}
+}
+
+@media (max-width: 30em) {
+	.menu__trigger {
+		width: 15%;
+	}
+}
+
+@media (max-width: 30em) {
+	.menu__link {
+		padding: 1.5rem 0.6rem;
+	}
+}
+
+@media (min-width: 40em) and (max-width: 50em) {
+	.menu__col {
+		width: 100%;
+	}
+}
+
+@media (min-width: 30em) and (max-width: 40em) {
+	.menu__col {
+		width: 100%;
+		overflow: scroll;
+	}
+}
+
+@media (max-width: 30em) {
+	.menu__col {
+		width: 100%;
+		overflow: scroll;
+	}
+}
+.cf:after {
+	content: "";
+	display: table;
+	clear: both;
+}

@@ -1,0 +1,26 @@
+//elements get appended with "__" and the $name
+@mixin e($name) {
+	@at-root   #{&}__#{$name} {
+		@content;
+	}
+}
+
+//modifiers get appended with "--" and the $name
+@mixin m($name) {
+	@at-root   #{&}--#{$name} {
+		@content;
+	}
+}
+
+.speech-bubble{
+	color: purple;
+	@include e(header){ //header element
+		color: orange;
+	}
+	@include e(text){ //text element
+		color: black;
+		@include m(link){ //link modifier
+			color: green;
+		}
+	}
+}

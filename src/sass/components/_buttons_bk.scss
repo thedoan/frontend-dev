@@ -1,0 +1,90 @@
+.button {
+	text-decoration: none;
+	background-color: $color-accent;
+	color: #888;
+	@include rounded(5px);
+	@include shadow(0, 1px, 2px, rgba(0,0,0,.5));
+	@include linear-gradient( $color-accent,darken($color-accent, 20%));
+	display: inline-block;
+	margin: 10px;
+	font-size: 18px;
+	text-transform: uppercase;
+	font-weight: 600;
+	padding: 10px 5px;
+	&:hover {
+		@include linear-gradient(lighten($color-accent, 30%), $color-accent);
+	}
+	&__price {
+		background-color: white;
+		color:#fff;
+		padding-right: 12px;
+		padding-left: 12px;
+		margin-right: -10px;
+		font-weight: 600;
+		background-color: #333;
+		opacity: .4;
+		border-radius: 5px 0 0 5px;
+	}
+	&__text {
+		padding: 0 10px;
+		border-radius: 0 5px 5px 0;
+	}
+	&--secondary {
+		//background: darken($color-accent, 30%);
+		background: lighten($color-accent, 30%);
+		@include linear-gradient(lighten($color-accent, 30%), $color-accent);
+	}
+	&--red {
+		border-color: $color-red;
+		color: white;
+		background-color: $color-red;
+		@include linear-gradient($color-red, darken($color-red, 5%));
+		&:hover{
+			@include linear-gradient(lighten($color-red, 20%), $color-red);
+		}
+	}
+	&--green {
+		border-color: $color-green;
+		color: white;
+		background-color: $color-green;
+		@include linear-gradient($color-green, darken($color-green, 5%));
+		&:hover{
+			@include linear-gradient(lighten($color-green, 20%), $color-green);
+		}
+	}
+  &--blue {
+		border-color: $color-blue;
+		color: white;
+		background-color: $color-blue;
+		//background-color: blue;
+		@include linear-gradient($color-blue, darken($color-blue, 5%));
+		&:hover {
+			@include linear-gradient(lighten($color-blue, 20%), $color-blue);
+		}
+	}
+	&--gray {
+		border-color: $color-gray;
+		color: white;
+		background-color: $color-gray;
+		//background-color: blue;
+		@include linear-gradient($color-gray, darken($color-gray, 5%));
+		&:hover {
+			@include linear-gradient(lighten($color-gray, 20%), $color-gray);
+		}
+	}
+	&--black {
+		border-color: $color-black;
+		color: white;
+		background-color: $color-black;
+		//background-color: blue;
+		@include linear-gradient($color-black, darken($color-black, 5%));
+		&:hover {
+			@include linear-gradient(lighten($color-black, 20%), $color-black);
+		}
+	}
+	&--big {
+		font-size: 28px;
+		padding: 10px;
+		font-weight: 400;
+	}
+}

@@ -1,0 +1,26 @@
+.t-nature {
+	background-color: $color-gray;
+	color: $color-black;
+	.menu {
+		background: darken($color-green, 5%);
+		&__trigger {
+			background: lighten($color-green, 20%);
+			&--active {
+			}
+		}
+		&__link {
+			&:hover{
+				background: lighten($color-green, 20%);
+			}
+		}
+		&__dropdown {
+				background: lighten($color-green, 20%);
+				h2 {
+					color: darken($color-black,30%);
+				}
+				p {
+					color: darken($color-black,20%);
+				}
+		}
+	}
+}

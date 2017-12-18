@@ -1,0 +1,136 @@
+// When we give an element some ‘attention’.
+@mixin attention() {
+
+    &:hover,
+    &:active,
+    &:focus {
+        @content;
+    }
+
+}
+
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false){
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content
+		}
+	}
+  @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content
+		}
+	}
+}
+/// Make a context based selector a little more friendly
+/// @author Hugo Giraudel
+/// @param {String} $context
+@mixin when-inside($context){
+  #{$context} &
+    @content
+}
+@mixin rounded($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin shadow($x, $y, $blur, $color){
+	-webkit-box-shadow: $x $y $blur $color;
+	-moz-box-shadow: $x $y $blur $color;
+	box-shadow: $x $y $blur $color;
+}
+
+@mixin shadow-inset($x, $y, $blur, $color) {
+	-webkit-box-shadow: inset $x $y $blur $color;
+	-moz-box-shadow: inset $x $y $blur $color;
+	box-shadow: inset $x $y $blur $color;
+}
+
+@mixin transition($property) {
+	-webkit-transition: $property .2s ease;
+	-moz-transition: $property .2s ease;
+	-o-transition: $property .2s ease;
+	transition: $property .2s ease;
+}
+
+@mixin box-sizing {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+@mixin background-size($width, $height) {
+	-webkit-background-size: $width $height;
+	-moz-background-size: $width $height;
+	background-size: $width $height;
+}
+/*Tao nhat quan button
+ *Chi can dua vao mau text va background-color
+ */
+@mixin button($color, $background-color) {
+	border-color: $background-color;
+	color: $color;
+	background-color: $background-color;
+	@include linear-gradient($background-color, darken($background-color, 5%));
+	&:hover {
+		@include linear-gradient(lighten($background-color, 20%), $background-color);
+	}
+	@include shadow(0, 1px, 2px, rgba(0,0,0,.5));
+	@include rounded(5px);
+	text-decoration: none;
+}
+
+@mixin linear-gradient($from, $to) {
+	/* Fallback for sad browsers */
+	background-color: $to;
+	/* Mozilla Firefox */
+	background-image:	-moz-linear-gradient($from, $to);
+	/* Opera */
+	background-image:	-o-linear-gradient($from, $to);
+	/* WebKit (Safari 4+, Chrome 1+) */
+	background-image:	-webkit-gradient(linear, left top, left bottom, color-stop(0, $from),	color-stop(1, $to));
+	/* WebKit (Chrome 11+) */
+	background-image: -webkit-linear-gradient($from, $to);
+	/* IE10 */
+	background-image:	-ms-linear-gradient($from, $to);
+	/* W3C */
+	background-image:	linear-gradient($from, $to);
+}
+
+@mixin responsive($width) {
+	@if $width == wide-screens {
+		@media only screen and (max-width: $width-large) {
+		@content; }
+	}
+	@else if $width == medium-screens {
+		@media only screen and (max-width: $width-medium)
+		{ @content; }
+	}
+	@else if $width == small-screens {
+		@media only screen and (max-width: $width-small) {
+		@content; }
+	}
+}
+
+@mixin retinize($file, $type, $width, $height) {
+	background-image: url($file + '.' + $type);
+	@media #{$is-hidpi} {
+		& {
+			background-image: url($file + '-2x.' + $type);
+			@include background-size($width, $height);
+		}
+	}
+}

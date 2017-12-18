@@ -1,0 +1,100 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Regular font family
+/// @type List
+$text-font-stack: "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Monaco", monospace !default
+
+/// Copy text color
+/// @type Color
+$text-color: rgb(34, 34, 34) !default
+
+/// Main brand color
+/// @type Color
+$brand-color: rgb(229, 0, 80) !default
+
+/// Light grey
+/// @type Color
+$light-grey: rgb(237, 237, 237) !default
+
+/// Medium grey
+/// @type Color
+$mid-grey: rgb(153, 153, 153) !default
+
+/// Dark grey
+/// @type Color
+$dark-grey: rgb(68, 68, 68) !default
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1180px !default
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: ("small": 320px, "medium": 768px, "large": 1024px) !default
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: "/assets/" !default
+
+/*
+* keep color variables organized in a Sass map
+* This way, the colors can be iterated, are more organized, and are more intuitive to reference.
+ */
+$scotch-colors: (
+  'primary': #8e3329, 
+	'accent': #d98328,
+	'secondary': #5a1321,
+	'foreground': #191919,
+	'background': #e9e9e9
+);
+
+//list color guide
+/*
+$color-background: 
+$color-background-alt:
+$color-background-alt2:
+$color-text:
+$color-text-alt:
+$color-text-alert:
+$color-text-callout:
+$color-border:
+*/
+$color-red: #f44336;
+$color-green: #4CAF50;
+$color-yellow: #ffff00;
+$color-blue: #008CBA;
+$color-gray: #e7e7e7;
+$color-black: #555555;
+$color-white: #ffffff;
+$brand-color: #fc3;
+$pink: #ea4c89;
+$color-accent: $pink;
+$trial-color-01: #095809;
+$trial-color-02: #2f12b2;
+$trial-color-03: #00a500;
+$trial-color-04: #72380b;
+$trial-color-05: #f1700c;
+/*test color mix*/
+$test-color-brand: #30c9e8;
+$test-color-dark: #325158;
+$test-color-dark-grey: opacify(mix(rgba(48,201,232,1),rgba(66,66,66,1)),0.2);
+//list fonts
+//media querry break point
+$width-small: 480px;
+$width-medium: 800px;
+$width-large: 1200px;
+
+$is-hidpi: "(-webkit-min-device-pixel-ratio: 1.5), 
+	(min--moz-device-pixel-ratio: 1.5), 
+	(-o-min-device-pixel-ratio: 3/2), 
+	(min-device-pixel-ratio: 1.5),
+  (min-resolution: 1.5dppx)";

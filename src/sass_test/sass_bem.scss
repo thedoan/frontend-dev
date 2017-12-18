@@ -1,0 +1,12 @@
+.speech-bubble {
+	color: purple;
+		&__header {
+			color: orange; 
+		}
+		&__text {
+			color: black;
+			&--link {
+				color: green; 
+			}
+		}
+}

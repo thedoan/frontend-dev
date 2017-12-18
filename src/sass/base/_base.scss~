@@ -1,0 +1,59 @@
+
+body {
+	font-family: "Raleway";
+}
+
+.cf:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+h1 {
+	font-size: 40px;
+	@include responsive(wide-screens) {	font-size: 48px; }
+	@include responsive(medium-screens) { font-size: 32px; }
+	@include responsive(small-screens) { font-size: 20px; }
+}
+
+h2 {
+	color: white;
+	font-size: 1.7rem;
+	font-weight: 500;
+	line-height: 1.4;
+	margin-bottom: 2vh;
+}
+
+p {
+	line-height: 1.5;
+	/*
+	color: #fafafa;
+	*/
+	font-weight: 500;
+}
+.right {
+	float: right;
+}
+.left {
+	float: left;
+}
+a {
+	font-weight: bold;
+	text-decoration: none;
+	color: #c00;
+
+	@include attention() {
+		outline: none;
+		color: #09f;
+	}
+}
+/*ap dung attention cho ca button*/
+.btn {
+	background-color: #09f;
+
+	@include attention() {
+		background-color: darken(#09f, 10%);
+	}
+
+}
+

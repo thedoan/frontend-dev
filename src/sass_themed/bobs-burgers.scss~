@@ -1,0 +1,6 @@
+// Set a variable containing current brand
+$brand: 'bobs-burgers';
+// Import all components
+@import 'header';
+@import 'hero';
+@import 'footer';

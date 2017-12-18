@@ -1,0 +1,31 @@
+@import 'mixins'
+.hero {
+  // First, styles that all brands
+  // have in common.
+  // (The "shared stuff")
+  font-size: 2em;
+  font-weight: bold;
+  border: 1px solid;
+  // Next, brand-specific styles.
+  // (The "themed stuff")
+  @include bobs-burgers {
+    border-color: yellow;
+  }
+  @include paddys-pub {
+    border-color: green;
+    background: url(/images/shamrock.png);
+  }
+  @include stus-stews {
+    border-color: blue;
+    &:hover,
+    &:focus {
+      // You can nest styles and even reference
+      // the parent from within this mixin!
+      background-color: blue;
+    }
+  }
+  @include jurassic-fork {
+    border-color: brown;
+    background: url(/images/dinosaur-footprints.png);
+  }
+}

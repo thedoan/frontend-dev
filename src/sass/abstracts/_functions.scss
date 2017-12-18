@@ -1,0 +1,6 @@
+@function calc-em($target-px, $context) {
+  @return ($target-px / $context) * 1em;
+}
+@function scotch-color($key: 'primary') {
+	  @return map-get($scotch-colors, $key);
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title><%= htmlWebpackPlugin.options.title %></title>
+		<% if (htmlWebpackPlugin.files.favicon) { %>
+		<link rel="shortcut icon" href="<%= htmlWebpackPlugin.files.favicon%>">
+		<% } %>
+		<% if (htmlWebpackPlugin.options.mobile) { %>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<% } %>
+
+		<% for (var css in htmlWebpackPlugin.files.css) { %>
+		<link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+		<% } %>
+	</head>
+	<body>
+		<nav>
+			<div class="nav-mobile">
+				<a href="#" id="nav-toggle"><span></span></a>
+			</div>
+			<ul class="nav-list">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Services</a>
+					<ul class="nav-dropdown">
+						<li><a href="#">Web Design</a></li>
+						<li><a href="#">Web Development</a></li>
+						<li><a href="#">Graphic Design</a></li>
+					</ul>  
+				</li>
+				<li><a href="#">Pricing</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+		<% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+		<script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+		<% } %>
+		<script>
+		$(function() { // DOM Ready
+			console.log("Jquery ready");
+
+		});
+		</script>
+	</body>
+</html>
