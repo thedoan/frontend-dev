@@ -33,4 +33,4 @@
 @import 'themes/theme_nature';
 //@import 'testing';
 //debug css ex: show border of all element
-@import 'debug';
+//@import 'debug';

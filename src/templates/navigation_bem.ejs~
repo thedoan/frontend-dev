@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title><%= htmlWebpackPlugin.options.title %></title>
+		<% if (htmlWebpackPlugin.files.favicon) { %>
+		<link rel="shortcut icon" href="<%= htmlWebpackPlugin.files.favicon%>">
+		<% } %>
+		<% if (htmlWebpackPlugin.options.mobile) { %>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<% } %>
+
+		<% for (var css in htmlWebpackPlugin.files.css) { %>
+		<link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+		<% } %>
+	</head>
+	<body>
+		<section class="navigation navigation--nature">
+			<div class="navigation__container">
+				<div class="navigation__brand">
+					<a class="navigation__brand-link" href="#!">Logo</a>
+				</div>
+					<div class="navigation__mobile">
+						<a href="#" class="hamburger"><span class="hamburger__slice"></span></a>
+					</div>
+					<ul class="navigation__menu navigation--nature">
+						<li class="navigation__menu-item">
+							<a class="navigation__menu-item-link" href="#">Home</a></li>
+						<li class="navigation__menu-item">
+							<a class="navigation__menu-item-link" href="#">About</a></li>
+						<li class="navigation__menu-item">
+							<a class="navigation__menu-item-link" href="#">Services</a>
+							<ul class="navigation__submenu navigation--nature">
+								<li class="navigation__submenu-item">
+									<a class="navigation__submenu-item-link" href="#">Web Design</a></li>
+								<li class="navigation__submenu-item">
+									<a class="navigation__submenu-item-link" href="#">Web Development</a></li>
+								<li class="navigation__submenu-item">
+									<a class="navigation__submenu-item-link" href="#">Graphic Design</a></li>
+							</ul>  
+						</li>
+						<li class="navigation__menu-item">
+							<a class="navigation__menu-item-link" href="#">Pricing</a></li>
+						<li class="navigation__menu-item">
+							<a class="navigation__menu-item-link" href="#">Contact</a></li>
+					</ul>
+			</div>
+		</section>
+		<section>
+			<div class="navigation--nature" style="width: 60px; height: 60px;">
+				<div class="hamburger">
+					<div class="hamburger__slice"></div>
+				</div>
+			</div>
+		</section>
+		<% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+		<script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+		<% } %>
+		<script>
+$(function() { // DOM Ready
+	$('.navigation__menu-item > a:not(:only-child)').click(function(e) {
+		$(this).siblings('.navigation__submenu').toggle();
+		$('.navigation__submenu').not($(this).siblings()).hide();
+		e.stopPropagation();
+	});
+	$('html').click(function() {
+		$('.navigation__submenu').hide();
+	});
+	$('a.hamburger').on('click', function() {
+		this.classList.toggle('hamburger--active');
+		$('.navigation__menu').toggle();
+	});
+});
+		</script>
+	</body>
+</html>

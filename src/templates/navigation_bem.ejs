@@ -15,22 +15,22 @@
 		<% } %>
 	</head>
 	<body>
-		<section class="navigation">
+		<section class="navigation navigation--nature">
 			<div class="navigation__container">
 				<div class="navigation__brand">
 					<a class="navigation__brand-link" href="#!">Logo</a>
 				</div>
 					<div class="navigation__mobile">
-						<a href="#" id="nav-toggle"><span></span></a>
+						<a href="#" class="hamburger"><span class="hamburger__slice"></span></a>
 					</div>
-					<ul class="navigation__menu">
+					<ul class="navigation__menu navigation--nature">
 						<li class="navigation__menu-item">
 							<a class="navigation__menu-item-link" href="#">Home</a></li>
 						<li class="navigation__menu-item">
 							<a class="navigation__menu-item-link" href="#">About</a></li>
 						<li class="navigation__menu-item">
 							<a class="navigation__menu-item-link" href="#">Services</a>
-							<ul class="navigation__submenu">
+							<ul class="navigation__submenu navigation--nature">
 								<li class="navigation__submenu-item">
 									<a class="navigation__submenu-item-link" href="#">Web Design</a></li>
 								<li class="navigation__submenu-item">
@@ -46,6 +46,13 @@
 					</ul>
 			</div>
 		</section>
+		<section>
+			<div class="navigation--nature" style="width: 60px; height: 60px;">
+				<div class="hamburger">
+					<div class="hamburger__slice"></div>
+				</div>
+			</div>
+		</section>
 		<% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
 		<script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
 		<% } %>
@@ -59,8 +66,8 @@ $(function() { // DOM Ready
 	$('html').click(function() {
 		$('.navigation__submenu').hide();
 	});
-	$('#nav-toggle').on('click', function() {
-		this.classList.toggle('active');
+	$('a.hamburger').on('click', function() {
+		this.classList.toggle('hamburger--active');
 		$('.navigation__menu').toggle();
 	});
 });

@@ -1,0 +1,39 @@
+
+@media only screen and (max-width: $breakpoint) {
+	//insert all mobile styles here
+	.hamburger {
+		position: absolute;
+		cursor: pointer;
+		left: 18px;
+		top: 22px;
+		padding: 10px 35px 16px 0px;
+		&__slice, &__slice:before, &__slice:after {
+			cursor: pointer;
+			border-radius: 1px;
+			height: 5px;
+			width: 35px;
+			background: $nav-font-color;
+			position: absolute;
+			display: block;
+			content: '';
+			transition: all 300ms ease-in-out;
+		}
+		&__slice:before {
+			top: -10px;	
+		}
+		&__slice:after {
+			bottom: -10px;	
+		}
+	}
+	.hamburger--active .hamburger__slice {
+		background-color: transparent;
+		&:before {
+			top: 0;
+			transform: rotate(45deg);
+		} 
+		&:after {
+			top: 0;
+			transform: rotate(-45deg);
+		} 
+	}
+}

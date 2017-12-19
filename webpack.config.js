@@ -16,9 +16,9 @@ const HtmlWebpackPluginNavigationOptions = {
 const HtmlWebpackPluginNavigationOptions2 = {
 	// Required
 	inject: false,
-	title: 'Navigation Design',
-	template: 'src/templates/navigation2.ejs',
-	filename: 'navigation2.html',
+	title: 'Navigation Design With BEM',
+	template: 'src/templates/navigation_bem.ejs',
+	filename: 'navigation_bem.html',
 	mobile: true,
 }
 
