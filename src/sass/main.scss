@@ -1,22 +1,24 @@
+//1. Configuration and helpers
 @import 'abstracts/variables';
 @import 'abstracts/functions';
 @import 'abstracts/mixins';
 @import 'abstracts/placeholders';
-
-@import 'vendors/bootstrap';
-@import 'vendors/jquery-ui';
-
-@import 'base/reset';
+//2. Vendors
+@import 'vendors/normalize';
+//3. Base stuff
 @import 'base/base';
+@import 'base/fonts';
 @import 'base/typography';
-
-@import 'layout/navigation';
-@import 'layout/grid';
+@import 'base/helpers';
+//4. Layout-related sections
 @import 'layout/header';
 @import 'layout/footer';
+@import 'layout/navigation';
+@import 'layout/off_canvas_navigation';
+@import 'layout/grid';
 @import 'layout/sidebar';
 @import 'layout/forms';
-
+//5. Components
 @import 'components/buttons';
 @import 'components/body';
 @import 'components/menu';
@@ -25,10 +27,10 @@
 @import 'components/dropdown';
 @import 'components/navbar';
 @import 'components/hamburger';
-
+//6. Page-specific styles
 @import 'pages/home';
 @import 'pages/contact';
-
+//7. Themes
 @import 'themes/theme';
 @import 'themes/admin';
 @import 'themes/theme_nature';
